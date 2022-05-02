@@ -7,7 +7,7 @@
 # TERA Toolbox
 * Next generation of Tera-Proxy: Automatic updates, a graphical user interface, automated client mods, a direct connection to the game client (allowing e.g. realtime datacenter queries), and a lot more!
 * Please check out [the documentation](doc/main.md) (especially if you want to develop your own modules)!
-* Originally forked from https://github.com/pinkipi/tera-proxy which was DMCA'd by EME.
+* Originally forked from https://github.com/tera-toolbox/tera-toolbox (latest patch 115).
 
 # Installation Instructions
 * Download the archive from [GitHub](https://github.com/tera-private-toolbox/tera-toolbox/archive/refs/heads/master.zip) and unzip it to any installation folder.
