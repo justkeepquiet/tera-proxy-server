@@ -6,7 +6,7 @@ const path = require('path');
 const EventEmitter = require('events');
 
 // Constants
-const AutoUpdateServers = ['https://raw.githubusercontent.com/tera-toolbox/tera-toolbox/'];
+const AutoUpdateServers = ['https://raw.githubusercontent.com/tera-private-toolbox/tera-toolbox/'];
 
 // Implementation
 function forcedirSync(dir) {

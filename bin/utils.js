@@ -16,7 +16,7 @@ async function initGlobalSettings(DevMode = false) {
     global.TeraProxy = {
         DevMode: !!DevMode,
         DiscordUrl: 'https://discord.gg/dUNDDtw',
-        SupportUrl: 'https://discord.gg/659YbNY',
+        SupportUrl: 'https://github.com/tera-private-toolbox/tera-toolbox/issues',
         GUIMode: !!process.versions.electron,
         IsAdmin: await isAdmin(),
         get UILanguage() {

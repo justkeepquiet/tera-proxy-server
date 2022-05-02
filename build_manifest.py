@@ -8,7 +8,9 @@ def is_blacklisted(file):
         '.git',
         'mods',
     }) or file in {
+        'build_manifest.bat',
         'build_manifest.py',
+        '.gitignore',
         'manifest.json',
         'config.json',
     }

@@ -9,6 +9,5 @@
         "settingsFile": "./settings.json",
         "settingsMigrator": "./migration.js"
     },
-    "servers": ["https://raw.githubusercontent.com/SaltyMonkey/skill-prediction/master/"],
-    "supportUrl": "https://github.com/tera-mods/skill-prediction/issues"
+    "servers": ["http://git.dev.hsdn.org/tera-v92/skill-prediction/raw/master/"]
 }
