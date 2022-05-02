@@ -3,7 +3,7 @@
     "author": "Caali / Pinkie Pie / m0py / Snug / beng",
     "description": "Removes the annoying animation and skips the progress bar for enchanting, upgrading, soulbinding, dismantling, and merging items.",
     "version": "1.0",
-    "servers": ["http://git.dev.hsdn.org/tera-v92/instant-everything/raw/master/"],
+    "servers": ["https://raw.githubusercontent.com/tera-private-mods/instant-everything/master/"],
     "options": {
         "cliName": "InstantEverything",
         "guiName": "InstantEverything",

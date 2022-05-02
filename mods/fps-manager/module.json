@@ -10,6 +10,6 @@
     },
     "author": "SaltyMonkey",
     "description": "FPS Manager is modern and extremely customizable module for Tera Toolbox which can help to solve annoyance by some ingame messages and fps drops.",
-    "servers": ["http://git.dev.hsdn.org/tera-v92/fps-manager/raw/master/"],
+    "servers": ["https://raw.githubusercontent.com/tera-private-mods/fps-manager/master/"],
     "conflicts": ["fps-utils"]
 }
