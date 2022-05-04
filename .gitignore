@@ -1,2 +1,3 @@
+node_modules/electron/*
 build_manifest.bat
 build_manifest.py

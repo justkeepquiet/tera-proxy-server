@@ -7,6 +7,7 @@ def is_blacklisted(file):
     return any(head.startswith(dir) for dir in {
         '.git',
         'mods',
+        'node_modules\\electron',
     }) or file in {
         'build_manifest.bat',
         'build_manifest.py',
