@@ -1,4 +1,4 @@
-# :information_source: Patch 92 support
+# :information_source: Patch 92.04 and 100.02 (x64) support
 
 * Unofficial version of the TERA Toolbox for patch 92.03, 92.04 and 100.02 (x64) with auto-updates of all supported modules. You can get some modules available on the `Get More Mods` tab.
 
