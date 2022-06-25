@@ -1,14 +1,14 @@
 # :information_source: Patch 92 support
 
-* Unofficial version of the TERA Toolbox for patch 92 with auto-updates of all supported modules. You can get some modules available on the `Get More Mods` tab.
+* Unofficial version of the TERA Toolbox for patch 92.03, 92.04 and 100.02 (x64) with auto-updates of all supported modules. You can get some modules available on the `Get More Mods` tab.
 
-* Неофициальная версия TERA Toolbox для патча 92 с автоматическим обновлением всех поддерживаемых модулей. Получить некоторые доступные модули можно на вкладке `Скачать модули`.
+* Неофициальная версия TERA Toolbox для патчей 92.03, 92.04 и 100.02 (x64) с автоматическим обновлением всех поддерживаемых модулей. Получить некоторые доступные модули можно на вкладке `Скачать модули`.
 
 ## Warranty
 
-* The original maintainer of this software is still a [SaltyMonkey](https://github.com/SaltyMonkey). In this fork, we just added support for patch 92 for convenient installation of module updates corrected for this patch. We do not guarantee the full functionality of this version and the modules installed in it.
+* The original maintainer of this software is still a [SaltyMonkey](https://github.com/SaltyMonkey). In this fork, we just added support for patch 92/100 for convenient installation of module updates corrected for this patch. We do not guarantee the full functionality of this version and the modules installed in it.
 
-* Оригинальным мейнтейнером этого проекта по прежнему является [SaltyMonkey](https://github.com/SaltyMonkey). В данном форке мы лишь добавили поддержку патча 92 для удобной установки обновлений модулей, исправленных под данный патч. Мы не гарантируем полную работоспособность этой версии и установленных в ней модулей.
+* Оригинальным мейнтейнером этого проекта по прежнему является [SaltyMonkey](https://github.com/SaltyMonkey). В данном форке мы лишь добавили поддержку патча 92/100 для удобной установки обновлений модулей, исправленных под данный патч. Мы не гарантируем полную работоспособность этой версии и установленных в ней модулей.
 
 # TERA Toolbox
 * Next generation of Tera-Proxy: Automatic updates, a graphical user interface, automated client mods, a direct connection to the game client (allowing e.g. realtime datacenter queries), and a lot more!
