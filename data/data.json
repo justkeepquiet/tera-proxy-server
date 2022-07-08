@@ -4696,6 +4696,7 @@
             "S_PREMIUM_SLOT_OFF": 53852,
             "S_PREPARE_EXIT": 57453,
             "S_PREPARE_RETURN_TO_LOBBY": 43307,
+            "S_PREVIEW_ITEM": 59553,
             "S_PRIVATE_CHANNEL_NOTICE": 34714,
             "S_PRIVATE_CHAT": 48427,
             "S_PRODUCE_CRITICAL": 63348,
