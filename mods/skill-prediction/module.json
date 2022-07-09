@@ -5,7 +5,7 @@
     "description": "Simulates skills client-side, eliminating ping-based delays and animation lock.",
     "options": {
         "cliName": "PSP",
-        "guiName": "Skill Prediction (patch 92)",
+        "guiName": "Skill Prediction",
         "settingsVersion": 4,
         "settingsFile": "settings.json",
         "settingsMigrator": "migration.js"
