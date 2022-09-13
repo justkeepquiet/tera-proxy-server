@@ -5,16 +5,12 @@ function onConnectionError(err) {
     switch (err.code) {
         case 'ECONNREFUSED':
         case 'ETIMEDOUT':
-            console.error(mui.get('connection-manager/error-ECONNREFUSED-ETIMEDOUT-1', { address: err.address, port: err.port, code: err.code }));
-            console.error(mui.get('connection-manager/error-ECONNREFUSED-ETIMEDOUT-2'));
-            console.error(mui.get('connection-manager/error-ECONNREFUSED-ETIMEDOUT-3'));
+            console.error(mui.get('connection-manager/error-ECONNREFUSED-ETIMEDOUT', { address: err.address, port: err.port, code: err.code }));
             break;
         case 'ECONNABORTED':
         case 'ECONNRESET':
         case 'EPIPE':
-            console.error(mui.get('connection-manager/error-ECONNABORTED-ECONNRESET-EPIPE-1', { code: err.code }));
-            console.error(mui.get('connection-manager/error-ECONNABORTED-ECONNRESET-EPIPE-2'));
-            console.error(mui.get('connection-manager/error-ECONNABORTED-ECONNRESET-EPIPE-3'));
+            console.error(mui.get('connection-manager/error-ECONNABORTED-ECONNRESET-EPIPE', { code: err.code }));
             break;
         default:
             console.error(err);

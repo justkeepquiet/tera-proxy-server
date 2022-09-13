@@ -95,14 +95,14 @@ class ModManager {
             if (this.isCoreMod(mod.name) && !this.isLoaded(mod.name))
                 this.load(mod.name);
         });
-        
+
         // Then load other mods
         this.installedMods.forEach(mod => {
             if (!this.isCoreMod(mod.name) && !this.isLoaded(mod.name))
                 this.load(mod.name);
         });
     }
-    
+
     unloadAll() {
         // Unload non-core mods first
         this.loadedMods.forEach(mod => {
@@ -172,51 +172,6 @@ class ModManager {
         }
 
         return mod.reload(logInfo);
-    }
-
-    // Client mod instances
-    loadAllClient(clientInterface) {
-        // Load core mods first
-        this.loadedMods.forEach(mod => {
-            if (this.isCoreMod(mod.info.name))
-                this.loadClient(mod, clientInterface);
-        });
-
-        // Then load other mods
-        this.loadedMods.forEach(mod => {
-            if (!this.isCoreMod(mod.info.name))
-                this.loadClient(mod, clientInterface);
-        });
-    }
-
-    unloadAllClient(clientInterface) {
-        // Unload non-core mods first
-        this.loadedMods.forEach(mod => {
-            if (!this.isCoreMod(mod.info.name))
-                this.unloadClient(mod, clientInterface);
-        });
-
-        // Then unload core modules
-        this.loadedMods.forEach(mod => {
-            if (this.isCoreMod(mod.info.name))
-                this.unloadClient(mod, clientInterface);
-        });
-    }
-
-    async _installAllClient(clientInterface) {
-        for (let mod of this.loadedMods.values()) {
-            let clientInstance = mod.getClientInstance(clientInterface);
-            if (clientInstance)
-                await clientInstance._install();
-        }
-    }
-
-    loadClient(mod, clientInterface, logInfo = true) {
-        return mod.loadClientInstance(clientInterface, logInfo);
-    }
-
-    unloadClient(mod, clientInterface, logInfo = true) {
-        return mod.unloadClientInstance(clientInterface, logInfo);
     }
 
     // Network mod instances

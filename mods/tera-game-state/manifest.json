@@ -1,0 +1,20 @@
+{
+	"files": {
+		"index.js": "dc1a20e611c4743c8eeace1c4f32c06d7f9c0c77aa0273f323719c38121cc38d",
+		"module.json": "5448337b534550f7aae0fd1344945914f20aabd1d0530fc30729adda0fe8a245",
+		"lib/me.js": "06ccd7e6aa10f175607f4671c3b6bd7aeb7000a7f6da473fecbdf8394e74e28e",
+		"lib/contract.js": "23b979179caf0fe21b22501d166b4a393af3bbabbfa48915df1323c77142bace",
+		"lib/glyphs.js": "0c3c5e48f39fadc6ac0189712f78d2557e18eaaae967044758cd89a42bbd59d2",
+		"lib/inventory.js": "85446f663728bb26117d0fc30f95f486fc33ff50e5e4ca60158befd0b263fd89",
+		"lib/talents.js": "82364a1f92e7e82eb594c1d707ada0435117c0baf2172d7871da1e8c598a061c",
+		"doc/contract.md": "f872ec8ac7fdd48c7cc7ef1b5cd164b6221b467f0ce422ed30f3e2fee187cd59",
+		"doc/data.md": "82470c169c0354f6500f0456804d72c310ef3ea63cc2c4677b0cbdd17798f850",
+		"doc/glyphs.md": "282cd028c37e8afa28dd22bcd1d638bceb1447e60858a8a6b21fe327d874b4be",
+		"doc/inventory.md": "a9cff75b917845bbe4c1d37ea2bd6500597e30978156c066900d5115f0b5b22d",
+		"doc/talents.md": "659586de327eea7ed7d669dfb629304c0b118bccf41f4c09b938a94a7914f01b",
+		"doc/me.md": "80239e1d6d6e2afee5b0e330f476abed736e69209a77cb462fbfef227927e4e3",
+		"README.md": "d1afb5b1788c98b762ecc2cc29db922a346e29c6bc62e57769dfbc9cb6aff683",
+		"doc/party.md": "b3f2cc47d24a0965f0eeef0c09353720122738f1631a6263601f8b192c8cf2f4",
+		"lib/party.js": "ab87c1fbd14fad8e45a2e5760aac80faf9345efc545d3531e343f69d5c9720ce"
+	}
+}

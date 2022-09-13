@@ -1,7 +1,7 @@
 {
-  "name": "tera-toolbox",
+  "name": "tera-server-toolbox",
   "version": "1.0.0",
-  "description": "Comprehensive modding framework for TERA.",
+  "description": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tera-toolbox/tera-toolbox.git"
@@ -9,7 +9,8 @@
   "author": "Caali",
   "contributors": [
     "Pinkie Pie",
-    "meishu"
+    "meishu",
+    "JKQ"
   ],
   "engines": {
     "node": ">=11.4.0"
@@ -19,7 +20,6 @@
   },
   "homepage": "https://github.com/tera-toolbox/tera-toolbox#readme",
   "dependencies": {
-    "node-fetch": "^2.6.0",
     "binary-search": "^1.3.6"
   }
 }

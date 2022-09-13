@@ -1,0 +1,9 @@
+{
+    "disableAutoUpdate": true,
+    "author": "Asura",
+    "name": "fake-ping",
+    "options": {
+        "guiName": "Fake ping"
+    },
+    "description": "Fake ping to best statistic"
+}

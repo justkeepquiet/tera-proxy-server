@@ -1,0 +1,8 @@
+{
+    "version": 3,
+    "data": {
+        "silent_mode": false,
+        "login_message": true,
+        "hide_module_names": false
+    }
+}

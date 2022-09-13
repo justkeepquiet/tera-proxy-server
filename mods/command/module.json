@@ -9,6 +9,5 @@
         "settingsVersion": 3,
         "settingsFile": "config.json",
         "settingsMigrator": "settings_migrator.js"
-    },
-    "servers": ["https://raw.githubusercontent.com/tera-private-toolbox/command/master/"]
+    }
 }

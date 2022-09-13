@@ -42,20 +42,6 @@ function LoadConfiguration() {
     }
 }
 
-// Migration
-function Migration() {
-    try {
-        const { ToolboxMigration } = require('./migration');
-        ToolboxMigration();
-        return true;
-    } catch (e) {
-        console.error(mui.get('loader-cli/error-migration-failed-1'));
-        console.error(mui.get('loader-cli/error-migration-failed-2'));
-        console.error(mui.get('loader-cli/error-migration-failed-3', { supportUrl: global.TeraProxy.SupportUrl }));
-        return false;
-    }
-}
-
 // Proxy main function
 function RunProxy(ModuleFolder, ProxyConfig) {
     const TeraProxy = require('./proxy');
@@ -107,34 +93,12 @@ process.on('warning', (warning) => {
 const { initGlobalSettings } = require('./utils');
 initGlobalSettings(false).then(() => {
     if (NodeVersionCheck()) {
-        if (Migration()) {
-            const ProxyConfig = LoadConfiguration();
-            if (ProxyConfig !== null) {
-                InitializeMUI(ProxyConfig.uilanguage);
-                global.TeraProxy.DevMode = !!ProxyConfig.devmode;
-                global.TeraProxy.GUIMode = false;
-                    
-                // Auto-update mods and run
-                if (ProxyConfig.noupdate) {
-                    console.warn(mui.get('loader-cli/warning-noupdate-1'));
-                    console.warn(mui.get('loader-cli/warning-noupdate-2'));
-                    console.warn(mui.get('loader-cli/warning-noupdate-3'));
-                    console.warn(mui.get('loader-cli/warning-noupdate-4'));
-                    console.warn(mui.get('loader-cli/warning-noupdate-5'));
-                    RunProxy(ModuleFolder, ProxyConfig);
-                } else {
-                    const autoUpdate = require('./update');
-                    autoUpdate(ModuleFolder, ProxyConfig.updatelog, true).then(updateResult => {
-                        updateResult.legacy.forEach(mod => console.warn(mui.get('loader-cli/warning-update-mod-not-supported', { name: mod.name })));
-                        updateResult.failed.forEach(mod => console.error(mui.get('loader-cli/error-update-mod-failed', { name: mod.name })));
-
-                        RunProxy(ModuleFolder, ProxyConfig);
-                    }).catch(e => {
-                        console.error(mui.get('loader-cli/error-update-failed'));
-                        console.error(e);
-                    });
-                }
-            }
+        const ProxyConfig = LoadConfiguration();
+        if (ProxyConfig !== null) {
+            InitializeMUI("en");
+            global.TeraProxy.DevMode = !!ProxyConfig.devmode;
+            global.TeraProxy.GUIMode = false;
+            RunProxy(ModuleFolder, ProxyConfig);
         }
     }
 }).catch(e => {
