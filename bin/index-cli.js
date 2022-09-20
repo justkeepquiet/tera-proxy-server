@@ -4,11 +4,18 @@
 require('module').wrapper[0] += `'use strict';`;
 
 const _log = console.log;
+
 global.console.log = function() {
-	const new_args = [`[${process.pid}]`];
-	new_args.push.apply(new_args, arguments);
-	_log.apply(null, new_args);
+    const now = new Date();
+    const timeStr = `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}:${now.getSeconds().toString().padStart(2, "0")}.${now.getMilliseconds().toString().padStart(3, "0")}`;
+    const newArgs = [`[${process.pid}]`, `[${timeStr}]`];
+
+    newArgs.push.apply(newArgs, arguments);
+    _log.apply(null, newArgs);
 };
+
+global.console.error = global.console.log;
+global.console.warn = global.console.log;
 
 function main() {
     require('./loader-cli');
