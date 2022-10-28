@@ -15,6 +15,7 @@ The implementation allows you to allow GM (QA) commands to certain accounts by p
 5. Start the TERA servers (Arbiter, World, etc.).
 6. Run **tera-proxy-server\Start.bat**.
 7. Go to TERA API Admin Panel and set the Privilege value for the account you want to grant commands.
+8. Make sure that port **7701** is not available for external user connections.
 
 ### Privilege values
 
