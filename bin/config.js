@@ -8,14 +8,20 @@ function loadConfig() {
         result = fs.readFileSync(ConfigFilePath, 'utf8');
     } catch (_) {
         return {
-            branch: 'master',
-            uilanguage: 'en',
-            updatelog: false,
-            devmode: false,
-            noselfupdate: false,
-            noupdate: false,
-            noslstags: false,
-            noserverautojoin: false
+            servers: [
+                {
+                    listenIp: "0.0.0.0",
+                    listenPort: 7801,
+                    serverIp: "127.0.0.1",
+                    serverPort: 7701,
+                    name: "Tera Private",
+                    serverId: 2800,
+                    publisher: "GF",
+                    language: "eu",
+                    patchVersion: "100.02",
+                    protocolVersion: 376012
+                }
+            ]
         };
     }
 
