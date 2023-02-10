@@ -29,10 +29,10 @@ class ConnectionManager {
         this.activeConnections.clear();
     }
 
-    start(target, socket, metadata, clientInterfaceConnection) {
+    start(target, socket, metadata, noIntegrity) {
         socket.setNoDelay(true);
 
-        const connection = new Connection(metadata, clientInterfaceConnection);
+        const connection = new Connection(metadata, null, noIntegrity);
         const dispatch = connection.dispatch;
 
         const client = new RealClient(connection, socket);

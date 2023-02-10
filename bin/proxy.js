@@ -1,6 +1,7 @@
 ﻿const mui = require('tera-toolbox-mui').DefaultInstance;
 const path = require('path');
 const fs = require('fs');
+const net = require('net');
 
 function LoadProtocolMap(dataFolder, version) {
     const parseMap = require('tera-data-parser').parsers.Map;
@@ -95,8 +96,7 @@ class TeraProxy {
             }
 
             // Create a new server
-            const net = require('net');
-            const server = net.createServer(socket => this.connectionManager.start({ ip: data.serverIp, port: data.serverPort }, socket, metadata));
+            const server = net.createServer(socket => this.connectionManager.start({ ip: data.serverIp, port: data.serverPort }, socket, metadata, !data.integrity));
 
             server.listen(data.listenPort, data.listenIp, () => {
                 const { address: listen_ip, port: listen_port } = server.address();

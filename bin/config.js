@@ -19,7 +19,8 @@ function loadConfig() {
                     publisher: "GF",
                     language: "eu",
                     patchVersion: "100.02",
-                    protocolVersion: 376012
+                    protocolVersion: 376012,
+                    integrity: false
                 }
             ]
         };
