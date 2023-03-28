@@ -103,7 +103,7 @@ class Party extends EventEmitter {
 		retObj.serverId = event.serverId;
 		retObj.name = event.name;
 
-		this.partyMembers = this.partyMembers.filter(elem => elem.playerId !== event.playerId && elem.serverId !== event.serverId);
+		this.partyMembers = this.partyMembers.filter(elem => elem.playerId !== event.playerId || elem.serverId !== event.serverId);
 
 		this.emit(eventType, retObj);
 	}
