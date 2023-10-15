@@ -29,6 +29,7 @@ class TeraProxy {
         this.dataFolder = dataFolder;
         this.config = config;
         this.running = false;
+        this.metadata = [];
 
         const ModManager = require('./mod-manager');
         this.modManager = new ModManager(this.modFolder);
@@ -36,27 +37,7 @@ class TeraProxy {
 
         const ConnectionManager = require('./connection-manager');
         this.connectionManager = new ConnectionManager(this.modManager);
-    }
 
-    destructor() {
-        if (this.modManager) {
-            this.modManager.destructor();
-            this.modManager = null;
-        }
-
-        if (this.connectionManager) {
-            this.connectionManager.destructor();
-            this.connectionManager = null;
-        }
-
-        this.running = false;
-    }
-
-    get hasActiveConnections() {
-        return this.connectionManager.hasActiveConnections;
-    }
-
-    run() {
         this.config.servers.forEach(data => {
             // Use config for metadata
             const metadata = {
@@ -94,6 +75,32 @@ class TeraProxy {
                 console.error(mui.get('proxy/error-cannot-load-protocol', { protocolVersion: metadata.protocolVersion, publisher: metadata.publisher, majorPatchVersion: metadata.majorPatchVersion, minorPatchVersion: metadata.minorPatchVersion }));
                 console.error(e);
             }
+
+            this.metadata.push(metadata);
+        });
+    }
+
+    destructor() {
+        if (this.modManager) {
+            this.modManager.destructor();
+            this.modManager = null;
+        }
+
+        if (this.connectionManager) {
+            this.connectionManager.destructor();
+            this.connectionManager = null;
+        }
+
+        this.running = false;
+    }
+
+    get hasActiveConnections() {
+        return this.connectionManager.hasActiveConnections;
+    }
+
+    run() {
+        this.config.servers.forEach((data, index) => {
+            const metadata = this.metadata[index];
 
             // Create a new server
             const server = net.createServer(socket => this.connectionManager.start({ ip: data.serverIp, port: data.serverPort }, socket, metadata, !data.integrity));
