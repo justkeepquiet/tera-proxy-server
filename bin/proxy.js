@@ -2,6 +2,8 @@
 const path = require('path');
 const fs = require('fs');
 const net = require('net');
+const { protocol } = require('tera-data-parser');
+const { hasPadding } = require('tera-network-proxy');
 
 function LoadProtocolMap(dataFolder, version) {
     const parseMap = require('tera-data-parser').parsers.Map;
@@ -51,7 +53,12 @@ class TeraProxy {
                 majorPatchVersion: Number(data.patchVersion.split(".")[0]),
                 minorPatchVersion: Number(data.patchVersion.split(".")[1]),
                 protocolVersion: data.protocolVersion,
-                maps: { protocol: {}, sysmsg: {} }
+                maps: { protocol: {}, sysmsg: {} },
+                //
+                sysmsgMap: { name: new Map(), code: new Map() },
+                protocolMap: { name: new Map(), code: new Map(), padding: (new Array(0x10000)).fill(false) },
+                protocol: {},
+                latestDefVersion: new Map()
             };
 
             // Load protocol map
@@ -69,6 +76,29 @@ class TeraProxy {
                     console.warn(mui.get('proxy/warning-unmapped-protocol-7'));
                     console.warn(mui.get('proxy/warning-unmapped-protocol-8', { supportUrl: global.TeraProxy.SupportUrl }));
                 } else {
+                    // Initialize sysmsg maps
+                    Object.keys(metadata.maps.sysmsg).forEach(name => {
+                        metadata.sysmsgMap.name.set(name, metadata.maps.sysmsg[name]);
+                        metadata.sysmsgMap.code.set(metadata.maps.sysmsg[name], name);
+                    });
+
+                    // Initialize protocol maps
+                    Object.keys(metadata.maps.protocol).forEach(name => {
+                        metadata.protocolMap.name.set(name, metadata.maps.protocol[name]);
+                        metadata.protocolMap.code.set(metadata.maps.protocol[name], name);
+                        metadata.protocolMap.padding[metadata.maps.protocol[name]] = hasPadding(metadata.protocolVersion, name);
+                    });
+
+                    // Initialize protocol
+                    metadata.protocol = new protocol(metadata.majorPatchVersion, metadata.minorPatchVersion, metadata.protocolMap, metadata.platform);
+                    metadata.protocol.load(metadata.dataFolder);
+
+                    if (metadata.protocol.messages) {
+                        for (const [name, defs] of metadata.protocol.messages) {
+                            metadata.latestDefVersion.set(name, Math.max(...defs.keys()));
+                        }
+                    }
+
                     console.log(mui.get('proxy/protocol-loaded', { protocolVersion: metadata.protocolVersion, publisher: metadata.publisher, majorPatchVersion: metadata.majorPatchVersion, minorPatchVersion: metadata.minorPatchVersion }));
                 }
             } catch (e) {
